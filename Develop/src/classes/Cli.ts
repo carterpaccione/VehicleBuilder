@@ -303,7 +303,7 @@ class Cli {
           console.log('A truck cannot tow itself');
           this.performActions();
         } else {
-          console.log(answers.vehicleToTow); // not truck
+          // console.log(answers.vehicleToTow); // not truck
           vehicle.tow(answers.vehicleToTow);
           this.performActions();
         }
@@ -401,14 +401,13 @@ class Cli {
         else if (answers.action === 'Tow') {
           for (let i = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin) {
-              console.log(this);
+              // console.log(this);
               let truck = this.vehicles[i];
               if (truck instanceof Truck) {
                 this.findVehicleToTow(truck);
                 return;
               } else {
                 console.log('The selected vehicle is not a truck');
-                this.performActions();
               }
             }
           }
@@ -423,7 +422,7 @@ class Cli {
                 motorbike.wheelie(motorbike);
                 return;
               } else {
-                this.performActions();
+                console.log(`This ${this.vehicles[i].make} ${this.vehicles[i].model} cannot do a wheelie.`)
               }
             }
           }
