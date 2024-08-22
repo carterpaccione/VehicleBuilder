@@ -420,6 +420,7 @@ class Cli {
               let motorbike = this.vehicles[i];
               if (motorbike instanceof Motorbike) {
                 motorbike.wheelie(motorbike);
+                this.performActions();
                 return;
               } else {
                 console.log(`This ${this.vehicles[i].make} ${this.vehicles[i].model} cannot do a wheelie.`)
